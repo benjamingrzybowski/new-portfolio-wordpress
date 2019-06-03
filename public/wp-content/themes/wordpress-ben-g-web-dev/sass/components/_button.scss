@@ -1,0 +1,116 @@
+.btn {
+    &,
+    &:link, &:visited {
+        display: inline-block;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        transition: all .2s;
+        position: relative;
+        font-size: $default-font-size;
+
+
+        //<button> element sytle
+        border: none;
+        cursor: pointer;
+        
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+        position: absolute;
+        top: 0; 
+        left: 0;
+        z-index: -1; 
+        transition: all .4s;
+    }
+
+    &:hover::after {
+        transform: scaleX(1.5) scaleY(1.9);
+        opacity: 0;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translate(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+
+    &--animated {
+        animation: moveInBtn ease-out 1s;
+        animation-fill-mode: backwards;
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-gray-dark;
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary-light;
+        color: $color-white;
+        &::after {
+            background-color: $color-primary-light;
+        }
+    }
+
+    &--blue {
+        background-color: $primary-blue;
+        color: $color-white;
+        &::after {
+            background-color: $dark-blue;
+        }
+    }
+
+    &--pagination-right {
+        float: right;
+    }
+
+    &--pagination-left {
+        z-index: 9999;
+    }
+
+    &--read-more {
+        margin-top: 5%;
+        z-index: 9999;
+    }
+
+}
+
+.btn-txt {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $dark-blue; 
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $dark-blue;
+        padding: 3px;
+        transition: all .2s;
+    }
+    &:hover {
+        background-color: $primary-blue;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+        transform: translateY(-2px);
+    }
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 .5rem 1.5rem rgba($color-black,.2);
+    }
+
+}

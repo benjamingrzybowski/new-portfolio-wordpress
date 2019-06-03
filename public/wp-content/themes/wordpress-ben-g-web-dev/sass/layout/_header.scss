@@ -1,0 +1,75 @@
+.header {
+    height: 85vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($primary-blue, .9),
+        rgba($primary-grey, .9));
+        //each coordinate has x y properties, in that order
+        //ORDER OF POINTS IN FUNCTION
+        //top-right, top-left, bottom-left, bottom-right 
+        clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100% );
+        position: relative;
+        @include respond(tab-port) {
+            height: 65vh;
+            clip-path: polygon(0 0, 100% 0, 100% 57vh, 0 100% );
+        }
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem; 
+        left: 4rem;
+        @include respond-height {
+            top: 3rem; 
+        }
+    }
+
+    &__logo {
+        height: 9.5rem;
+        @include respond(tab-port) {
+            height: 4.5rem;
+        }
+        @include respond(phone) {
+            position: absolute;
+            left: -25px;
+        }
+        @include respond-height {
+            height: 4.5rem;
+        }
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        @include respond(tab-port) {
+            top: 60%;
+        }
+    }
+}
+
+.header-secondary {
+    height: 15vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($primary-blue, 1),
+        rgba($primary-grey, 1));
+        //each coordinate has x y properties, in that order
+        //ORDER OF POINTS IN FUNCTION
+        //top-right, top-left, bottom-left, bottom-right 
+        clip-path: polygon(0 0, 100% 0, 100% 10vh, 0 100% );
+        position: relative;
+
+        &__text-box {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        @include respond-height {
+
+        }
+}
