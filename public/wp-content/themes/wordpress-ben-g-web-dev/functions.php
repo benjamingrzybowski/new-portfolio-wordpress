@@ -16,6 +16,8 @@ add_theme_support( 'starter-content' );
 function ben_g_enqueue_styles() {
 
   wp_enqueue_style( 'main-css', get_stylesheet_directory_uri() . '/css/style.css', [], time(), 'all' );
+  wp_enqueue_style( 'abel-font', 'https://fonts.googleapis.com/css?family=Abel&display=swap', [], time(), 'all' );
+
 
   if ( is_front_page() ) {
     wp_enqueue_script('animations-script', get_stylesheet_directory_uri() . '/js/animations.js', array('jquery'), '1.0', true);

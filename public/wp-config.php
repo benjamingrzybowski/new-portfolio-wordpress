@@ -17,6 +17,10 @@
  *
  * @package WordPress
  */
+    
+    
+include(dirname(dirname(__FILE__)).'/local_config.php');
+
 
 // ** MySQL settings ** //
 /** The name of the database for WordPress */
