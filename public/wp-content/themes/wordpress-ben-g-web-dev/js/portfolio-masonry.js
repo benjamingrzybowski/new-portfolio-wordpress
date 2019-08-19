@@ -1,3 +1,4 @@
+//https://masonry.desandro.com/
 jQuery(function($) {
     // init Masonry
     var grid = document.querySelector('.grid');

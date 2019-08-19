@@ -20,7 +20,7 @@
                             <p class="paragraph">
                                 <?php the_field('supporting_text_2'); ?>
                             </p>
-                            <a href="#" class="btn-txt">
+                            <a href="/service-packages/" class="btn-txt">
                                 Learn More &rarr;
                             </a>
                     </div>
@@ -32,7 +32,7 @@
                                  size="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
                                  alt="1"    
                                  class="comp__photo comp__photo--p1">
-                            <h2 id="cta"><a href="#">Learn More About Me</a></h2>
+                            <!--<h2 id="cta">Learn More About Me</h2>-->
                         </div>
                     </div>
                 </div>
@@ -84,23 +84,7 @@
                                         <?php the_field('contact_introduction_line'); ?>
                                     </h2>
                                 </div>
-                             <form action="#" class="form">
-                                 <div class="form__group">
-                                     <input id="fullName" type="text" placeholder="Full Name" required class="form__input">
-                                     <label for="fullName" class="form__label">Name</label>
-                                 </div>
-                                 <div class="form__group">
-                                    <input id="email" type="email" placeholder="Email Address" required class="form__input">
-                                    <label for="email" class="form__label">Email Address</label>
-                                </div>
-                                <div class="form__group">
-                                        <input id="email" type="email" placeholder="Message" required class="form__input">
-                                        <label for="email" class="form__label">Message</label>
-                                    </div>
-                                <div class="form__group u-margin-top-sm">
-                                    <button class="btn btn--blue">Submit &rarr;</button>
-                                </div>
-                             </form>
+                            <?php gravity_form(1, false, false, false, false, true); ?>
                          </div>
                     </div>
                 </div>

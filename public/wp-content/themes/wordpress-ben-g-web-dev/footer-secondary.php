@@ -7,12 +7,14 @@
         <div class="row">
             <div class="col-1-of-2">
                 <div class="footer__navigation">
-                    <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Home</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">About Us</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Contact</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Privacy</a></li>
-                    </ul>
+                <?php 
+                 $args = array(
+                    'menu_class'        => 'footer__list',
+                    'theme_location'    => 'footer_menu',
+                    'add_li_class'      => 'footer__item',
+                 );    
+                wp_nav_menu( $args );
+                ?>
                 </div>
             </div>
             <div class="col-1-of-2">

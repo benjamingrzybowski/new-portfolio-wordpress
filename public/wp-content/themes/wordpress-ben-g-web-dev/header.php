@@ -27,7 +27,7 @@
         <header class="header">
                         <div class="bg-video">
                             <video class="bg-video__content" autoplay muted loop>
-                                <source src="new-assets/mountains.mp4" type="video/mp4">
+                                <source src="http://newportfolio.local.com/wp-content/uploads/2019/08/front-page-video.mp4" type="video/mp4">
                                video not supported by this browser
                             </video>
                         </div>

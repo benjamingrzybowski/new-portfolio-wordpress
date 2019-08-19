@@ -50,6 +50,20 @@
         &:not(:last-child) {
             margin-right: 1.4rem;
         }
+        a {
+            background-color: $color-gray-dark-2;
+            color: $color-grey-light-1;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .2s;
+            
+            &:hover,
+            &:active {
+                color: $primary-blue; 
+                box-shadow: 0 1rem 2rem rgba($color-black, .8);
+        }
+    }
     }
     &__link {
         &:link,

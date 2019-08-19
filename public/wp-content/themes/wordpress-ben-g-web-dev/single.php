@@ -1,4 +1,12 @@
 <?php get_header('secondary') ?>
+<style>
+
+.slide-right img {
+    width: 100%;
+    height: 100%;
+}
+
+</style>
 <div id="slide-in-trigger"></div>
 <section class="content">
     <div class="row">
@@ -17,15 +25,35 @@
             <?php the_post_thumbnail('medium'); ?>
         </div>
     </div>
+    <?php
+        $contactForm = get_field('display_contact_form');
+        if( $contactForm == 'Display') { ?>
+    <section class="section-booking">
+        <div class="row">
+            <!--<div class="book form-slide-up">-->
+                <div class="book">
+                 <div class="book__form">
+                        <div class="u-margin-btm-sm">
+                        </div>
+                    <?php gravity_form(1, false, false, false, false, true); ?>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <?php } ?>
     <?php   } // end while 
          } // end if
     ?>
-    <a href="#" class="btn-txt btn--pagination-left">
-        &larr; Previous
-    </a>
-    <a href="#" class="btn-txt btn--pagination-right">
-        Next &rarr;
-    </a>
+        <?php 
+            $next_post_link_url = get_permalink( get_adjacent_post(false,'',false)->ID ); 
+            $prev_post_link_url = get_permalink( get_adjacent_post(false,'',true)->ID ); 
+        ?>
+        <a href="<?php echo($prev_post_link_url); ?>" class="btn-txt btn--pagination-left">
+            &larr; Previous
+        </a>
+        <a href="<?php echo($next_post_link_url); ?>" class="btn-txt btn--pagination-right">
+            Next &rarr;
+        </a>
 </section>
 <script>
 

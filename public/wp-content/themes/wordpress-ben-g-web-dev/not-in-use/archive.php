@@ -12,7 +12,12 @@
     <div class="b-page">
     <div class="row blog-page">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <div class="blog-page-post">
+        <?php 
+            $categories = get_the_category();
+            $slugs = wp_list_pluck($categories, 'slug');
+            $class_names = join(' ', $slugs);
+        ?>
+            <div class="blog-page-post mix<?php if ($class_names) { echo ' ' . $class_names;} ?>">
                 <div class="blog-page-copy">
                     <p class="paragraph-md"><?php echo(get_the_excerpt()); ?></p>
                     <a href="<?php the_permalink(); ?>" class="btn-txt btn--read-more">
@@ -30,9 +35,7 @@
 </section>
 <script>
 
-jQuery( document ).ready( function( $ ) {
-
-
+(function() {
     var slideInTrigger = document.getElementById('slide-in-trigger').getBoundingClientRect();
     var slideLeft = document.querySelector('.slide-left');
     var slideRight = document.querySelector('.slide-right');
@@ -41,7 +44,32 @@ jQuery( document ).ready( function( $ ) {
         slideLeft.classList.add('slides-in-left');
         slideRight.classList.add('slides-in-right');
     }
-});
+})();
+
+//jQuery( document ).ready( function( $ ) {});
+
+
+
+/// holding on to this useless piece of shit ////
+
+var newLayout = document.getElementsByClassName('masonryTrigger');
+for (x = 0; x < newLayout.length; x++) {
+    newLayout[x].addEventListener( 'click', function( event ) {
+        jQuery(function($) {
+        // init Masonry
+        var grid = document.querySelector('.grid');
+        var msnry = new Masonry( grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+        });
+            imagesLoaded( grid ).on( 'progress', function() {
+            // layout Masonry after each image loads
+            msnry.layout();
+            });
+        });
+    });
+}
 
 </script>
 <?php get_footer('secondary'); ?>

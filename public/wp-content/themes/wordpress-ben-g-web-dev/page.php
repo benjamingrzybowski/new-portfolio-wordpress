@@ -1,16 +1,32 @@
 <?php get_header('secondary') ?>
 <section class="content">
     <div class="row">
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <div class="col-1-of-4 intro-left slide-left">
-            <h2>Some content</h2>
+            <h2 class="heading-secondary-2"><?php the_title(); ?></h2>
         </div>
-        <div class="col-3-of-4 intro-right slide-right">
-            <p class="paragraph">Lorem ipsum dolor amet activated charcoal man bun echo park four loko fanny pack stumptown tote bag helvetica. Church-key four loko dreamcatcher, sustainable ennui banh mi mixtape tacos hot chicken mlkshk. Kogi tbh air plant, butcher yr mlkshk paleo swag four dollar toast whatever ramps cold-pressed food truck. IPhone keffiyeh 3 wolf moon poke, hashtag shaman selvage edison bulb prism fam hoodie. Hexagon scenester four loko, listicle food truck cornhole mixtape pitchfork vape chia try-hard distillery direct trade kogi vaporware.</p>
-            <br>
-            <p class="paragraph">Salvia truffaut selfies twee. Flexitarian pabst chambray migas scenester try-hard gluten-free cray meh vinyl unicorn. Post-ironic squid jean shorts, waistcoat narwhal bushwick DIY raclette. IPhone gochujang pinterest lo-fi, cred food truck taiyaki taxidermy celiac poutine church-key sustainable distillery vape. Forage austin la croix, cardigan selvage shabby chic ramps semiotics yuccie PBR&B. Knausgaard chia raw denim plaid DIY unicorn distillery wayfarers williamsburg twee tofu taxidermy salvia vegan. Snackwave health goth af try-hard, fam put a bird on it franzen.</p>
+        <div class="col-3-of-4 intro-right slide-right paragraph">
+            <?php the_content(); ?>
+        <?php endwhile; endif; ?>
         </div>
     </div>
 </section>
+<?php
+        $contactForm = get_field('display_contact_form');
+        if( $contactForm == 'Display') { ?>
+    <section class="section-booking">
+        <div class="row">
+            <!--<div class="book form-slide-up">-->
+                <div class="book">
+                 <div class="book__form">
+                        <div class="u-margin-btm-sm">
+                        </div>
+                    <?php gravity_form(1, false, false, false, false, true); ?>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <?php } ?>
 <script>
 
 jQuery( document ).ready( function( $ ) {

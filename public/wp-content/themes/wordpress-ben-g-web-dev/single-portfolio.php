@@ -5,7 +5,7 @@
         <?php
         if (get_field('top_right_photo')) {
         ?>
-        <div class="col-2-of-4 port">
+        <div class="col-1-of-2 port">
             <div class="port-content">
                 <h2 class="heading-secondary">
                     <?php the_title(); ?>
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-2-of-4">
+        <div class="col-1-of-2">
             <img src="<?php the_field('top_right_photo') ?>" alt="<?php the_field('alt_text_top_right_photo'); ?>" class="port-img">
         </div>
         <?php
@@ -66,12 +66,18 @@
         ?>
     </div>
     <?php   } // end while ?>
-    <a href="<?php previous_posts_link('previous'); ?>" class="btn-txt btn--pagination-left">
-        &larr; Previous
-    </a>
-    <a href="<?php next_posts_link('previous'); ?>" class="btn-txt btn--pagination-right">
-        Next &rarr;
-    </a>
+        <?php 
+            $next_post_link_url = get_permalink( get_adjacent_post(false,'',false)->ID ); 
+            $prev_post_link_url = get_permalink( get_adjacent_post(false,'',true)->ID ); 
+        ?>
+        <a href="<?php echo($prev_post_link_url); ?>" class="btn-txt btn--pagination-left">
+            &larr; Previous
+        </a>
+        <a href="<?php echo($next_post_link_url); ?>" class="btn-txt btn--pagination-right">
+            Next &rarr;
+        </a>
+        <?php //previous_post_link('<a class="btn-txt btn--pagination-left">%link</a>'); ?> 
+        <?php //next_post_link('<a class="btn-txt btn--pagination-left">%link</a>'); ?> 
     <?php 
          } // end if
     ?>

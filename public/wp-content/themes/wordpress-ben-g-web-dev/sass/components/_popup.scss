@@ -21,7 +21,7 @@
         //height: 50rem;
         width: 70%;
         border-radius: 5px;
-        display: table;
+        display: block;
         overflow: hidden;
         opacity: 0;
         transform: translate(-50% , -50%) scale(.5);
@@ -39,7 +39,7 @@
     }
 
     &__right {
-        width: 66.6666667%;
+        //width: 66.6666667%;
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;

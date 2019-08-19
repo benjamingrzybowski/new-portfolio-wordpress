@@ -32,7 +32,7 @@
             </div>
             <div class="header-secondary__text-box">               
                 <h1 class="header-secondary-primary">
-                    <span class="heading-primary--md">Single Post Page</span>
+                    <span class="heading-primary--md">Ben G Web Design and Development</span>
                     <div id="slide-in-trigger"></div>
                 </h1>
             </div>
